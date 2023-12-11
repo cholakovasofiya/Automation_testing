@@ -78,8 +78,8 @@ public class TestLoginPage extends TestPageNoviniSite {
         Thread.sleep(5000);
         String url = chromeDriver.getCurrentUrl();
         String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();
-
-        Assert.assertEquals("User or password incorrect!", textDisplayed);
+        Assert.assertEquals("My Account", textDisplayed);
+        Assert.assertEquals("https://novini.site/my-account-downtown_pro/", url);
         Thread.sleep(3000);
     }
 
