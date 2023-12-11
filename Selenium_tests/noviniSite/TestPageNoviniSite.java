@@ -1,4 +1,4 @@
-package tests.noviniSite;
+package test.noviniSite;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,9 +11,10 @@ public class TestPageNoviniSite {
     protected WebDriver chromeDriver = new ChromeDriver();
 
     //temporary email used
-    protected String emailInput = "ypg77765@nezid.com";
-    protected String usernameInput = "ypg77765";
+    protected String emailInput = "pzr89357@zbock.com";
+    protected String usernameInput = "pzr89357";
     protected String passwordInput = "Sofiya123!@#";
+    protected  String wrongPassword = "Pass123";
 
 
     @Before
