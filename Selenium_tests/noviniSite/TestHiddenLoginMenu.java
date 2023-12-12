@@ -7,19 +7,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import java.util.concurrent.TimeUnit;
-
-public class TestHiddenLoginMenu extends TestPageNoviniSite{
+public class TestHiddenLoginMenu extends TestPageNoviniSite {
 
     @Test
-    public void hiddenLoginMenuShowUp () throws InterruptedException {
+    public void hiddenLoginMenuShowUp() throws InterruptedException {
         pageDisplayAndCookiesClosure();
 
-        chromeDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         //scrolling up to unveil the hidden login menu
         JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
-        js.executeScript("window.scrollBy(0,250)", "");
+        js.executeScript("window.scrollBy(0,350)", "");
 
         Actions actionHover = new Actions(chromeDriver);
         WebElement myAccountButton = chromeDriver.findElement(By.xpath
@@ -27,6 +24,9 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite{
         WebElement loginButton = chromeDriver.findElement(By.cssSelector
                 ("#tdi_92 > div > div.tdw-wml-menu.tdw-wml-guest > div >" +
                         " div.tdw-wml-menu-content > a.tdw-wml-login-link.tdw-wml-popup"));
+
+        Thread.sleep(3000);
+
         //hover to drop down the submenu of login/register
         actionHover.moveToElement(myAccountButton);
         actionHover.moveToElement(loginButton).build().perform();
@@ -39,6 +39,6 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite{
 
         String txtLoginRegister = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();
-Assert.assertEquals("Login / Register", txtLoginRegister);
+        Assert.assertEquals("Login / Register", txtLoginRegister);
     }
 }
