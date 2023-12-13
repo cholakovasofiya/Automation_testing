@@ -65,7 +65,7 @@ public class TestLoginPage extends TestPageNoviniSite {
         Thread.sleep(3000);
     }
 
-// case-sensitive username/email field
+    // case-sensitive username/email field
     @Test
     public void signInUsernameCaseSensitive() throws InterruptedException {
         pageDisplayAndCookiesClosure();
