@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,14 +22,17 @@ public class TestPageNoviniSite {
 
     protected void pageDisplayAndCookiesClosure() throws InterruptedException {
         chromeDriver.get("https://novini.site/");
-        chromeDriver.findElement(By.xpath("/html/body/div[3]/div/div[6]/button[2]")).click();
-        Thread.sleep(2000);
+        WebElement cookiesClosureButton = chromeDriver.findElement(By.xpath("/html/body/div[3]/div/div[6]/button[2]"));
+        wait.until(d -> cookiesClosureButton.isDisplayed());
+        cookiesClosureButton.click();
+
     }
+
 
     @Before
     public void setUp() {
         chromeDriver = new ChromeDriver();
-        wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(3));
+        wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(15));
         chromeDriver.manage().window().maximize();
 
     }

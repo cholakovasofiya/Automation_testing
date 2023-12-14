@@ -3,6 +3,7 @@ package test.noviniSite;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class TestRegistrationForm extends TestPageNoviniSite {
 
@@ -17,7 +18,7 @@ public class TestRegistrationForm extends TestPageNoviniSite {
     public void registrationUser() throws InterruptedException {
 
         //temporary email used
-        dataInputSetUp("lxf03353@zbock.com", "lxf03353");
+        dataInputSetUp("fre41592@zbock.com", "m1815");
 
         pageDisplayAndCookiesClosure();
 
@@ -28,9 +29,10 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
         chromeDriver.findElement(By.id("tds_register_button")).click();
 
-        Thread.sleep(5000);
-        String textMessage = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]")).getText();
+        WebElement element = chromeDriver.findElement(By.xpath
+                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
+        wait.until(d -> element.isDisplayed());
+        String textMessage = element.getText();
         Assert.assertEquals
                 ("Please check your email (inbox or spam folder) to validate your account.",
                         textMessage);
@@ -53,9 +55,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
         chromeDriver.findElement(By.id("tds_register_button")).click();
 
-        Thread.sleep(5000);
-        String textMessage = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]")).getText();
+
+        WebElement element = chromeDriver.findElement(By.xpath
+                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
+        wait.until(d -> element.isDisplayed());
+        String textMessage = element.getText();
         Assert.assertEquals
                 ("User already exists!", textMessage);
 
@@ -78,9 +82,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
         chromeDriver.findElement(By.id("tds_register_button")).click();
 
-        Thread.sleep(5000);
-        String textMessage = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]")).getText();
+        WebElement element = chromeDriver.findElement(By.xpath
+                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
+        wait.until(d -> element.isDisplayed());
+        String textMessage = element.getText();
+
         Assert.assertEquals
                 ("Email already exists!", textMessage);
 
@@ -102,9 +108,10 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
         chromeDriver.findElement(By.id("tds_register_button")).click();
 
-        Thread.sleep(5000);
-        String textMessage = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]")).getText();
+        WebElement element = chromeDriver.findElement(By.xpath
+                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
+        wait.until(d -> element.isDisplayed());
+        String textMessage = element.getText();
         Assert.assertEquals
                 ("Username incorrect!", textMessage);
     }
@@ -125,9 +132,10 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
         chromeDriver.findElement(By.id("tds_register_button")).click();
 
-        Thread.sleep(5000);
-        String textMessage = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]")).getText();
+        WebElement element = chromeDriver.findElement(By.xpath
+                ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
+        wait.until(d -> element.isDisplayed());
+        String textMessage = element.getText();
         Assert.assertEquals
                 ("Email incorrect!", textMessage);
     }

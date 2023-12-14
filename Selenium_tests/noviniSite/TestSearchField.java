@@ -20,6 +20,7 @@ public class TestSearchField extends TestPageNoviniSite {
 
         WebElement searchField = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tdi_39\"]/div/div[4]/div/div/div/div/div/form/div/input"));
+        wait.until(d->searchField.isDisplayed());
         searchField.sendKeys(wordToSearch, Keys.ENTER);
 
 

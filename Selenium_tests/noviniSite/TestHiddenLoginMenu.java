@@ -22,12 +22,13 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite {
                 ("//*[@id=\"tdi_92\"]/div/div[1]/span"));
         WebElement button = chromeDriver.findElement(By.cssSelector
                 (cssSelectorButton));
+        wait.until(d -> myAccountButton.isDisplayed());
 
         //hover to drop down the submenu of login/register
-        actionHover.moveToElement(myAccountButton);
+        actionHover.moveToElement(myAccountButton).build().perform();
+        wait.until(d -> button.isDisplayed());
         actionHover.moveToElement(button).build().perform();
         button.click();
-
 
     }
 
@@ -36,14 +37,12 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 
         scroll();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
 
         hover("#tdi_92 > div > div.tdw-wml-menu.tdw-wml-guest > div >" +
                 " div.tdw-wml-menu-content > a.tdw-wml-login-link.tdw-wml-popup");
 
-
         String urlLoginPage = chromeDriver.getCurrentUrl();
-
         Assert.assertEquals("https://novini.site/login-register-downtown_pro/"
                 , urlLoginPage);
 
@@ -56,11 +55,11 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite {
     public void hiddenRegisterMenu() throws InterruptedException {
         pageDisplayAndCookiesClosure();
         scroll();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
+
         hover("#tdi_92 > div > div.tdw-wml-menu.tdw-wml-" +
                 "guest > div > div.tdw-wml-menu-content > a.tdw-wml-register-" +
                 "link.tdw-wml-popup");
-
 
         String urlSighUpPage = chromeDriver.getCurrentUrl();
 
