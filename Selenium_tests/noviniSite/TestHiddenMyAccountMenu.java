@@ -7,40 +7,40 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class TestHiddenLoginMenu extends TestPageNoviniSite {
+public class TestHiddenMyAccountMenu extends TestPageNoviniSite {
     public void scroll() {
         //scrolling up to unveil the hidden login menu
         JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
         js.executeScript("window.scrollBy(0,350)", "");
-
-
     }
 
-    public void hover(String cssSelectorButton) {
+    public void hover() {
         Actions actionHover = new Actions(chromeDriver);
         WebElement myAccountButton = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tdi_92\"]/div/div[1]/span"));
-        WebElement button = chromeDriver.findElement(By.cssSelector
-                (cssSelectorButton));
+                (Constants.HIDDEN_ACCOUNT_BUTTON));
         wait.until(d -> myAccountButton.isDisplayed());
 
         //hover to drop down the submenu of login/register
         actionHover.moveToElement(myAccountButton).build().perform();
-        wait.until(d -> button.isDisplayed());
-        actionHover.moveToElement(button).build().perform();
-        button.click();
 
     }
 
+    public void hiddenButtonClick(String cssSelectorButton) {
+        WebElement button = chromeDriver.findElement(By.cssSelector
+                (cssSelectorButton));
+        wait.until(d -> button.isDisplayed());
+
+        button.click();
+    }
+
+
     @Test
-    public void hiddenLoginMenuShowUp() throws InterruptedException {
+    public void hiddenLoginButton() throws InterruptedException {
         pageDisplayAndCookiesClosure();
 
         scroll();
-//        Thread.sleep(3000);
-
-        hover("#tdi_92 > div > div.tdw-wml-menu.tdw-wml-guest > div >" +
-                " div.tdw-wml-menu-content > a.tdw-wml-login-link.tdw-wml-popup");
+        hover();
+        hiddenButtonClick(Constants.HIDDEN_LOGIN_BUTTON);
 
         String urlLoginPage = chromeDriver.getCurrentUrl();
         Assert.assertEquals("https://novini.site/login-register-downtown_pro/"
@@ -52,14 +52,12 @@ public class TestHiddenLoginMenu extends TestPageNoviniSite {
     }
 
     @Test
-    public void hiddenRegisterMenu() throws InterruptedException {
+    public void hiddenRegisterButton() throws InterruptedException {
         pageDisplayAndCookiesClosure();
         scroll();
-//        Thread.sleep(3000);
+        hover();
 
-        hover("#tdi_92 > div > div.tdw-wml-menu.tdw-wml-" +
-                "guest > div > div.tdw-wml-menu-content > a.tdw-wml-register-" +
-                "link.tdw-wml-popup");
+        hiddenButtonClick(Constants.HIDDEN_REGISTER_BUTTON);
 
         String urlSighUpPage = chromeDriver.getCurrentUrl();
 

@@ -18,16 +18,16 @@ public class TestRegistrationForm extends TestPageNoviniSite {
     public void registrationUser() throws InterruptedException {
 
         //temporary email used
-        dataInputSetUp("fre41592@zbock.com", "m1815");
+        dataInputSetUp("spp51950@omeie.com", "spp51");
 
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/?signup");
-        chromeDriver.findElement(By.id("tds_register_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_register_user")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_register_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_REGISTER)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.USERNAME_REGISTER)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER_RETYPE)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.REGISTER_BUTTON)).click();
 
         WebElement element = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
@@ -49,11 +49,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/?signup");
-        chromeDriver.findElement(By.id("tds_register_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_register_user")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_register_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_REGISTER)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.USERNAME_REGISTER)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER_RETYPE)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.REGISTER_BUTTON)).click();
 
 
         WebElement element = chromeDriver.findElement(By.xpath
@@ -76,11 +76,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/?signup");
-        chromeDriver.findElement(By.id("tds_register_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_register_user")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_register_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_REGISTER)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.USERNAME_REGISTER)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER_RETYPE)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.REGISTER_BUTTON)).click();
 
         WebElement element = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
@@ -102,11 +102,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/?signup");
-        chromeDriver.findElement(By.id("tds_register_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_register_user")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_register_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_REGISTER)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.USERNAME_REGISTER)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER_RETYPE)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.REGISTER_BUTTON)).click();
 
         WebElement element = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));
@@ -126,11 +126,11 @@ public class TestRegistrationForm extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/?signup");
-        chromeDriver.findElement(By.id("tds_register_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_register_user")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_register_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_retype_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_register_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_REGISTER)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.USERNAME_REGISTER)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_REGISTER_RETYPE)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.REGISTER_BUTTON)).click();
 
         WebElement element = chromeDriver.findElement(By.xpath
                 ("//*[@id=\"tds-register-div\"]/div[1]/div[2]"));

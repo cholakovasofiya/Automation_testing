@@ -13,13 +13,13 @@ public class TestSearchField extends TestPageNoviniSite {
         pageDisplayAndCookiesClosure();
 //        chromeDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        WebElement searchButton = chromeDriver.findElement(By.cssSelector("#tdi_39 > div > div.vc_column.tdi_64.wpb_column.vc_column_container.tdc-column.td-pb-span3 > div > div > div > a > span > svg"));
+        WebElement searchButton = chromeDriver.findElement(By.cssSelector(Constants.SEARCH_BUTTON));
 
         searchButton.click();
         String wordToSearch = "избори кмет";
 
         WebElement searchField = chromeDriver.findElement(By.xpath
-                ("//*[@id=\"tdi_39\"]/div/div[4]/div/div/div/div/div/form/div/input"));
+                (Constants.SEARCH_FIELD));
         wait.until(d->searchField.isDisplayed());
         searchField.sendKeys(wordToSearch, Keys.ENTER);
 

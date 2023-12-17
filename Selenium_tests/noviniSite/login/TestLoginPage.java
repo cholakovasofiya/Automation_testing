@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import test.noviniSite.Constants;
 import test.noviniSite.TestPageNoviniSite;
 
 public class TestLoginPage extends TestPageNoviniSite {
@@ -15,12 +16,12 @@ public class TestLoginPage extends TestPageNoviniSite {
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/");
 
-        chromeDriver.findElement(By.id("tds_login_email")).sendKeys(emailInput);
-        chromeDriver.findElement(By.id("tds_login_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_login_button")).click();
+        chromeDriver.findElement(By.id(Constants.EMAIL_LOGIN)).sendKeys(emailInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_LOGIN)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.LOGIN_BUTTON)).click();
 
 
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("tds_login_button")));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(Constants.LOGIN_BUTTON)));
         String url = chromeDriver.getCurrentUrl();
         String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();
 
@@ -36,10 +37,10 @@ public class TestLoginPage extends TestPageNoviniSite {
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/");
 
-        chromeDriver.findElement(By.id("tds_login_email")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_login_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_login_button")).click();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("tds_login_button")));
+        chromeDriver.findElement(By.id(Constants.USERNAME_LOGIN)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_LOGIN)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.LOGIN_BUTTON)).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(Constants.LOGIN_BUTTON)));
         String url = chromeDriver.getCurrentUrl();
         String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();
 
@@ -56,9 +57,9 @@ public class TestLoginPage extends TestPageNoviniSite {
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/");
 
-        chromeDriver.findElement(By.id("tds_login_email")).sendKeys(usernameInput);
-        chromeDriver.findElement(By.id("tds_login_pass")).sendKeys(wrongPassword);
-        chromeDriver.findElement(By.id("tds_login_button")).click();
+        chromeDriver.findElement(By.id(Constants.USERNAME_LOGIN)).sendKeys(usernameInput);
+        chromeDriver.findElement(By.id(Constants.PASSWORD_LOGIN)).sendKeys(wrongPassword);
+        chromeDriver.findElement(By.id(Constants.LOGIN_BUTTON)).click();
         wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"tds-login-div\"]/div[1]/div[2]"), "User or password incorrect!"));
         String url = chromeDriver.getCurrentUrl();
         String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tds-login-div\"]/div[1]/div[2]")).getText();
@@ -74,10 +75,11 @@ public class TestLoginPage extends TestPageNoviniSite {
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/");
 
-        chromeDriver.findElement(By.id("tds_login_email")).sendKeys(emailInput.toUpperCase());
-        chromeDriver.findElement(By.id("tds_login_pass")).sendKeys(passwordInput);
-        chromeDriver.findElement(By.id("tds_login_button")).click();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("tds_login_button")));
+        chromeDriver.findElement(By.id(Constants.EMAIL_LOGIN)).sendKeys(emailInput.toUpperCase());
+        chromeDriver.findElement(By.id(Constants.PASSWORD_LOGIN)).sendKeys(passwordInput);
+        chromeDriver.findElement(By.id(Constants.LOGIN_BUTTON)).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(Constants.LOGIN_BUTTON)));
+
 
         String url = chromeDriver.getCurrentUrl();
         String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();

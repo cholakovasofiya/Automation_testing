@@ -22,7 +22,7 @@ public class TestPageNoviniSite {
 
     protected void pageDisplayAndCookiesClosure() throws InterruptedException {
         chromeDriver.get("https://novini.site/");
-        WebElement cookiesClosureButton = chromeDriver.findElement(By.xpath("/html/body/div[3]/div/div[6]/button[2]"));
+        WebElement cookiesClosureButton = chromeDriver.findElement(By.xpath(Constants.COOKIES_CLOSURE));
         wait.until(d -> cookiesClosureButton.isDisplayed());
         cookiesClosureButton.click();
 
