@@ -2,10 +2,9 @@ package test.noviniSite;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -26,6 +25,32 @@ public class TestPageNoviniSite {
         wait.until(d -> cookiesClosureButton.isDisplayed());
         cookiesClosureButton.click();
 
+    }
+
+
+    public void scroll() {
+        //scrolling up to unveil the hidden login menu
+        JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
+        js.executeScript("window.scrollBy(0,350)", "");
+    }
+
+
+    public void hover(String xpathElement) {
+        Actions actionHover = new Actions(chromeDriver);
+        WebElement myAccountButton = chromeDriver.findElement(By.xpath
+                (xpathElement));
+        wait.until(d -> myAccountButton.isDisplayed());
+
+        //hover to drop down the submenu of login/register
+        actionHover.moveToElement(myAccountButton).build().perform();
+    }
+
+    public void loginBypass(String cookieUsername, String cookiePassword) {
+        Cookie username = new Cookie("wordpress_logged_in_2c8cb764c68c7b13821894b86f7a854b", cookieUsername);
+        Cookie password = new Cookie("passwordUser", cookiePassword
+        );
+        chromeDriver.manage().addCookie(username);
+        chromeDriver.manage().addCookie(password);
     }
 
 

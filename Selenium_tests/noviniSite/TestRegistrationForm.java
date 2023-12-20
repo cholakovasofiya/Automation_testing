@@ -18,7 +18,7 @@ public class TestRegistrationForm extends TestPageNoviniSite {
     public void registrationUser() throws InterruptedException {
 
         //temporary email used
-        dataInputSetUp("spp51950@omeie.com", "spp51");
+        dataInputSetUp("0juxkhps6e@skygazerhub.com", "asdf");
 
         pageDisplayAndCookiesClosure();
 
