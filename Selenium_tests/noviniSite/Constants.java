@@ -32,12 +32,12 @@ public final class Constants {
 
     public static final String FORGOT_PASSWORD_BUTTON = "//*[@id=\"tds-login-div\"]/div[1]/div[1]/div[2]/label/a";
     public static final String PROFILE_PICTURE = "//*[@id=\"tdi_103\"]/div/div/div/div/div/div[2]/div/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div/div/div[1]/div/div/input";
-    public static final String COOKIE_VERIFIED_USERNAME = "asdf%7C1704282630%7CLGNQxlAl2cShaAiMSbEb8K6aDAaTJVl5e0Ls3Lfq841%7C19a5c64d0c0b5d47a997908d112d607ceb861241f7cc1a152a9438cd49cc4662";
-    public static final String COOKIE_VERIFIED_USERNAME_PASS = "asdf%7C1704282630%7CLGNQxlAl2cShaAiMSbEb8K6aDAaTJVl5e0Ls3Lfq841%7C404394fd1172bcddb8ea3dc851bb697433dc5a32fa6e8218b725b0d41e84ae4e";
+    public static final String COOKIE_VERIFIED_USERNAME = "asdf%7C1704354832%7CzaO37hgI8ZvcjcaHQbsNCXopAAYp3UULUCgXZyljmcV%7C331727bd69e90d7d2635c1ab0d0967ba18809143eacef99fa3098da163bd70e8";
+    public static final String COOKIE_VERIFIED_USERNAME_PASS = "asdf%7C1704354832%7CzaO37hgI8ZvcjcaHQbsNCXopAAYp3UULUCgXZyljmcV%7C185ee86f969de0eae9c79dbf128e1ae3bc85f70e5be4474cbc7d623a845895d0";
     public static final String COOKIE_UNVERIFIED_USERNAME =
-            "pzr89357%7C1704282163%7CI52kQNVhER7Ao4p18P5HY3YoAZ5tV1SG5QYpRSITeC7%7C893ff9e789b66a791d9da085b1f0a790695ce1bb14b2e8e029a0c26dd2fd59a2";
+            "pzr89357%7C1704355011%7CMRi3e7cIvH6sT2Kd4q18fB7cPczkeqRmpS5MJ97AemL%7C0b1eabd2231023c900982b5338632ee0086e8c0dcc3d353ae30cc687bd40d68d";
     public static final String COOKIE_UNVERIFIED_USERNAME_PASS =
-            "pzr89357%7C1704282163%7CI52kQNVhER7Ao4p18P5HY3YoAZ5tV1SG5QYpRSITeC7%7Cc0be1cbc12216ce01b30e7e636bc1104ca5883ed22269be68aad885f7b875df6";
+            "pzr89357%7C1704355011%7CMRi3e7cIvH6sT2Kd4q18fB7cPczkeqRmpS5MJ97AemL%7C746cda1fe240c9aa734fa061b7c158034f34921774a4944dbb621e4db3f2a399";
 }
 
 

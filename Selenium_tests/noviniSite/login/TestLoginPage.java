@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import test.noviniSite.Constants;
 import test.noviniSite.TestPageNoviniSite;
@@ -33,7 +34,7 @@ public class TestLoginPage extends TestPageNoviniSite {
 
     @AfterTest
 
-    public void signInEmailAfterPasswordRecovery() throws InterruptedException {
+    public void signInEmailAfterPasswordChange() throws InterruptedException {
         pageDisplayAndCookiesClosure();
 
         chromeDriver.navigate().to("https://novini.site/login-register-downtown_pro/");
@@ -44,11 +45,9 @@ public class TestLoginPage extends TestPageNoviniSite {
 
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(Constants.LOGIN_BUTTON)));
-//            String url = chromeDriver.getCurrentUrl();
-//            String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tdi_97\"]/div/div/div/div/div/div/div/h3")).getText();
-//
-//            Assert.assertEquals("My Account", textDisplayed);
-//            Assert.assertEquals("https://novini.site/my-account-downtown_pro/", url);
+        String textDisplayed = chromeDriver.findElement(By.xpath("//*[@id=\"tds-login-div\"]/div[1]/div[2]")).getText();
+
+        Assert.assertEquals("User or password incorrect!", textDisplayed);
     }
 
 
