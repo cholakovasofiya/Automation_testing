@@ -15,8 +15,9 @@ public class ShopMenuPage extends PracticeAutomationSite {
 
     // Test case 1:Home page with three sliders only
     @Test
-    public void checkCountSlides() throws InterruptedException {
-        pageDisplayAndCookiesClosure();
+    public void checkCountSlides() {
+        chromeDriver.get(URL);
+
         clickButton(this.shopButton);
         clickButton(this.homeButton);
 
@@ -32,10 +33,10 @@ public class ShopMenuPage extends PracticeAutomationSite {
         Assert.assertEquals(3, images.size());
     }
 
-
+    // TEST ShopMenu / Test case 1 Filter by price functionality
     @Test
     public void filterPriceProduct() throws InterruptedException, MalformedURLException {
-        pageDisplayAndCookiesClosure();
+        chromeDriver.get(URL);
         clickButton(this.shopButton);
         dragAndDrop();
         clickButton(this.buttonFilter);
@@ -46,7 +47,7 @@ public class ShopMenuPage extends PracticeAutomationSite {
 
         URL url = new URL(urlHref);
         String[] params = url.getQuery().split("&");
-        System.out.println(params[0]);
+        System.out.printf(params[0] + "\n");
         System.out.printf(params[1]);
 
     }
